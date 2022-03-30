@@ -8,6 +8,6 @@ public interface ClaimService {
 
     ClaimResponseDTO findClaimById(Long id);
 
-    List<ClaimResponseDTO> list();
+    List<ClaimResponseDTO> findAll();
 
 }
