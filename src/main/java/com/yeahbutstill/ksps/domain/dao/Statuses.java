@@ -29,7 +29,7 @@ public class Statuses {
     @NotBlank
     private String status;
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "statuses")
     private List<Claim> claims;
 
 }

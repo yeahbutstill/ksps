@@ -25,14 +25,6 @@ public class Claim {
     @NotBlank
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id", nullable = false)
-    private Member member;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "status_id", nullable = false)
-    private Statuses statuses;
-
     @Column(name = "claim_number", nullable = false)
     @NotEmpty
     @NotBlank
@@ -53,7 +45,15 @@ public class Claim {
     @NotBlank
     private LocalDateTime createdTime;
 
-    @OneToMany(mappedBy = "claim", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "claim")
     private List<ClaimItem> claimItems;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id", nullable = false)
+    private Member member;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "status_id", nullable = false)
+    private Statuses statuses;
 
 }

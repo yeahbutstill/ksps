@@ -24,10 +24,6 @@ public class ClaimItem {
     @NotBlank
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "claim_id", nullable = false)
-    private Claim claim;
-
     @Column(name = "item_name", nullable = false)
     @NotEmpty
     @NotBlank
@@ -37,5 +33,9 @@ public class ClaimItem {
     @NotEmpty
     @NotBlank
     private BigDecimal value;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "claim_id", nullable = false)
+    private Claim claim;
 
 }

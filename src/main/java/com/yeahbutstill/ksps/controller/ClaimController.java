@@ -1,7 +1,7 @@
 package com.yeahbutstill.ksps.controller;
 
 import com.yeahbutstill.ksps.domain.dto.ClaimResponseDTO;
-import com.yeahbutstill.ksps.service.ClaimService;
+import com.yeahbutstill.ksps.service.impl.ClaimServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClaimController {
 
     @Autowired
-    private ClaimService claimService;
+    private ClaimServiceImpl claimService;
 
     @GetMapping("/get-all-data/{id}")
     public ResponseEntity<ClaimResponseDTO> findClaimById(@PathVariable Long id) {
-        return ResponseEntity.ok().body(claimService.findClaimById(id));
+        return ResponseEntity.ok().body(claimService.getClaimById(id));
     }
 
 }

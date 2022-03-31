@@ -33,7 +33,7 @@ public class Member {
     @NotBlank
     private Integer cardNumber;
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "member")
     private List<Claim> claims;
 
 }

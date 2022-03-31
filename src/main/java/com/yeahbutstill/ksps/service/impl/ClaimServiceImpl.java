@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Map;
 
 @Service
@@ -24,14 +23,11 @@ public class ClaimServiceImpl implements ClaimService {
     private ClaimItemRepository claimItemRepository;
 
     @Override
-    public ClaimResponseDTO findClaimById(Long id) {
-
+    public ClaimResponseDTO getClaimById(Long id) {
         Claim claim = claimRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("invalid.claimId"));
-
         ClaimItem claimItem = claimItemRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("invalid.claimItemId"));
-
         ClaimResponseDTO dtoClaim = new ClaimResponseDTO();
         dtoClaim.setMessage("Sukses");
         dtoClaim.setCode(HttpStatus.OK.value());
@@ -44,14 +40,7 @@ public class ClaimServiceImpl implements ClaimService {
                         "value", claimItem.getValue()
                 )
         ));
-
         return dtoClaim;
-
-    }
-
-    @Override
-    public List<ClaimResponseDTO> findAll() {
-        return null;
     }
 
 }
