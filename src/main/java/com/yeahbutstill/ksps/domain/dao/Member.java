@@ -31,7 +31,7 @@ public class Member {
     @Column(name = "card_number", nullable = false, unique = true)
     @NotEmpty
     @NotBlank
-    private Integer cardNumber;
+    private String cardNumber;
 
     @OneToMany(mappedBy = "member")
     private List<Claim> claims;
