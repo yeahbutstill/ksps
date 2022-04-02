@@ -4,6 +4,6 @@ import com.yeahbutstill.ksps.domain.dto.ClaimResponseDTO;
 
 public interface ClaimService {
 
-    ClaimResponseDTO getClaimById(Long id);
+    ClaimResponseDTO findClaimById(Long id);
 
 }

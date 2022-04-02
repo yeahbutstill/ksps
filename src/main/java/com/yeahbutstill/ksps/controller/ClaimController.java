@@ -18,7 +18,7 @@ public class ClaimController {
 
     @GetMapping("/get-all-data/{id}")
     public ResponseEntity<ClaimResponseDTO> findClaimById(@PathVariable Long id) {
-        return ResponseEntity.ok().body(claimService.getClaimById(id));
+        return ResponseEntity.ok().body(claimService.findClaimById(id));
     }
 
 }

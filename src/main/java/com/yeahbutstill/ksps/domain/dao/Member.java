@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -32,8 +31,5 @@ public class Member {
     @NotEmpty
     @NotBlank
     private String cardNumber;
-
-    @OneToMany(mappedBy = "member")
-    private List<Claim> claims;
 
 }

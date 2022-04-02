@@ -45,15 +45,15 @@ public class Claim {
     @NotBlank
     private LocalDateTime createdTime;
 
-    @OneToMany(mappedBy = "claim")
+    @OneToMany(mappedBy = "claim", cascade = CascadeType.ALL)
     private List<ClaimItem> claimItems;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "member_id", nullable = false)
-    private Member member;
+    private Member members;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "status_id", nullable = false)
-    private Statuses statuses;
+    private StatusClaim statusClaims;
 
 }

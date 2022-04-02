@@ -8,14 +8,13 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "status")
-public class Statuses {
+public class StatusClaim {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,8 +27,5 @@ public class Statuses {
     @NotEmpty
     @NotBlank
     private String status;
-
-    @OneToMany(mappedBy = "statuses")
-    private List<Claim> claims;
 
 }
