@@ -9,10 +9,10 @@ import java.util.List;
 @Data
 @SuperBuilder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ClaimResponseDTO {
+public class ClaimRegisterResponseDTO {
 
     private Integer code;
     private String message;
-    private List<ClaimDataResponseDTO> data;
+    private List<ClaimRegisterDataResponseDTO> data;
 
 }

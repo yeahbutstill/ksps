@@ -2,17 +2,16 @@ package com.yeahbutstill.ksps.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
 @Data
-@SuperBuilder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ClaimResponseDTO {
+public class ClaimDataResponseDTO {
 
-    private Integer code;
-    private String message;
-    private List<ClaimDataResponseDTO> data;
+    private String claimNumber;
+    private String memberName;
+    private String statusClaim;
+    private List<ClaimItemResponseDTO> item;
 
 }
